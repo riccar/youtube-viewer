@@ -24,7 +24,7 @@ class App extends Component {
     this.state = { videos: [] }
 
     //Define the Youtube search as function by passing the apy key and the search term and defining the callback function
-    YouTubeSearch({key: API_KEY, term: 'Surfboards'}, (videos) => {
+    YouTubeSearch({key: API_KEY, term: 'Clean Enegery'}, (videos) => {
       //in ES6 when the key and the value of an object are the same, they can be condensed into one. Eg. { videos: videos }
       //can be just {videos}
       //Set the state with the search results
