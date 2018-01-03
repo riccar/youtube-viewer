@@ -12,7 +12,12 @@ const VideoList = (props) => {
   //for each video within props.videos.map execute a function for each single video to create a VideoListItem and pass the video 
   //VideoListItem renders every video details. 
   const videoItems = props.videos.map((video) => {
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+      <VideoListItem 
+      onVideoSelect={props.onVideoSelect}
+      key={video.etag} 
+      video={video} />
+    );
   });
   
   return (

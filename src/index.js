@@ -5,6 +5,7 @@ import YouTubeSearch from 'youtube-api-search';
 
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
+import VideoDetail from './components/VideoDetails';
 
 const API_KEY = 'AIzaSyAE1JpbAKurn0ZPMbD-d-TcXxoFP-Sjl3Y';
 
@@ -21,14 +22,19 @@ class App extends Component {
     super(props);
 
     //Initialize component state as an empty array
-    this.state = { videos: [] }
+    this.state = { 
+      videos: [],
+      selectedVideo: null
+     };
 
     //Define the Youtube search as function by passing the apy key and the search term and defining the callback function
-    YouTubeSearch({key: API_KEY, term: 'Clean Enegery'}, (videos) => {
+    YouTubeSearch({key: API_KEY, term: 'Clean Energy'}, (videos) => {
       //in ES6 when the key and the value of an object are the same, they can be condensed into one. Eg. { videos: videos }
-      //can be just {videos}
+      //can be written as {videos}
       //Set the state with the search results
-      this.setState({ videos })
+      this.setState({ 
+        videos,
+        selectedVideo: videos[0] })
     });
   }
 
@@ -37,10 +43,14 @@ class App extends Component {
     //jsx is a subset or dialect of javascript that allows us to write what looks like html tags but it's actually javascript
     //we use jsx to produce the actual xml to insert into the DOM once it's transpiled into vanilla javascript . It's a lot easier 
     //VideoList component receives the list of videos via  a jsx property tag. This is called passing props
+    //In addition, VideoList call defines a callback function passed as a property (props) Sso when it's called back from VideoList it will update App state with the newly selected video
     return (
       <div>
         <SearchBar />
-        <VideoList videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos} />
       </div>
     );
   }
