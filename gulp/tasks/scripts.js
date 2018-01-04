@@ -1,5 +1,5 @@
 //Gulp tasks to execute webpack
-var gulp = require('gulp'),
+const gulp = require('gulp'),
 webpack = require('webpack');
 
 /*Execute webpack. callback is passed and executed to let Gulp know when

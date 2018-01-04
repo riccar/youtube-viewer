@@ -1,0 +1,16 @@
+@import "normalize.css";
+@import "./search-bar";
+@import "./video-detail";
+
+
+.video-item img {
+  max-width: 640px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}

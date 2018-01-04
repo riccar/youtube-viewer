@@ -19,6 +19,10 @@ gulp.task('watch', function() {
     browserSync.reload();
   });
 
+  watch('./src/style/**/*.css', function() {
+    gulp.start('cssInject');
+   
+  });
 
   /*Watch for any change to the script files*/
   watch('./src/components/**/*.js', function() {
@@ -27,6 +31,17 @@ gulp.task('watch', function() {
   
 });
 
+//Inject css changes into the browser without refreshing 
+//but first run the styles task and wait until it finishes.
+gulp.task('cssInject', ['styles'], function () {
+  
+  //Setup the source of the file
+  return gulp.src('./src/temp/style/style.css')
+    //pipe to the source file the browserSync stream feature
+    //to refresh browser when css changes
+    .pipe(browserSync.stream());
+
+});
 
   /*Execute task scriptRefresh after script finishes.
 ScriptRefresh watches the scripts folder for any change and reload the browser*/
