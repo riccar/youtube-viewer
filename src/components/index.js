@@ -28,7 +28,7 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch('Clear Energy');
+    this.videoSearch('Clean Energy');
     
   }
 
