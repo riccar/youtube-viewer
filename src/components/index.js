@@ -57,7 +57,7 @@ class App extends Component {
     //VideoList component receives the list of videos via  a jsx property tag. This is called passing props
     //In addition, VideoList call defines a callback function passed as a property (props) Sso when it's called back from VideoList it will update App state with the newly selected video
     return (
-      <div>
+      <div className="app">
         <SearchBar OnSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList

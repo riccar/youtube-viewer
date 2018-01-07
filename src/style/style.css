@@ -1,6 +1,7 @@
 @import "normalize.css";
 @import "./search-bar";
 @import "./video-detail";
+@import "./app";
 
 
 .video-item img {
