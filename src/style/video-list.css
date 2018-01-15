@@ -1,19 +1,31 @@
 .video-list {
-  margin: 2rem;
-  height: 30rem;
-  width: 35%;
+  margin: 1rem;
   float: left;
 
+  @mixin atMedium {
+    margin: 1rem;
+    width: 27.5rem;
+    position: relative;
+    top: -5rem;
+  }
+
+  @mixin atLarge {
+    margin: 1rem;
+    width: 27.5rem;
+    position: relative;
+    top: -5rem;
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  & li {
+    list-style: none;
+  }
+
 }
 
-.video-list ul {
-  margin: 0;
-  padding: 0;
-  
-}
 
-.video-list li {
-  list-style: none;
-  
-}
 

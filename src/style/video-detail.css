@@ -1,27 +1,43 @@
 .video-detail {
-  margin: 2rem;
-  height: 50rem;
-  width: 55%;
-  float: left;
+  margin: 1rem;
+  
+  @mixin atMedium {
+    margin: 1rem;
+    width: 45rem;
+    float: left;
+  }
+
+  @mixin atLarge {
+    width: 85rem;
+
+  }
+
+  &__viewer {
+    box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
+
+    @mixin atMedium {
+      height: 35rem;
+     }
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  &__desc {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    height: 12rem;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
+  }
+  
+  
 }
 
-.video-details__viewer {
-  height: 70%;
-  box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
-}
 
-.video-details__desc {
-  margin-top: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.5rem;
-  background-color: white;
-  box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
-}
-
-.video-details__video {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
       

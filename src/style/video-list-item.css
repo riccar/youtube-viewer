@@ -5,22 +5,45 @@
   margin-bottom: 0.5rem;
   background-color: white;
   box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
+  width: 28rem;
+
+  @mixin atMedium {
+    width: 27rem;
+  }
+
+  @mixin atLarge {
+    width: 31rem;
+  }
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  &__image {
+    float: left;
+    padding: 0.5rem;
+
+    @mixin atMedium {
+      width: 13rem;
+      padding: 1rem;
+      margin-right: 5px;
+      
+    }
+  }
+  
+  &__title {
+    padding: 0.5rem;
+    
+    @mixin atMedium {
+      
+      padding: 1rem;
+      
+    }
+  }
 }
 
-.video-list-item:hover {
-  background-color: #eee;
-}
-//todo: Change width in percentage for px or rem
-.video-list-item__image {
-  width: 40%;
-  float: left;
-  padding: 1rem;
-}
 
-.video-list-item__title {
-  width: 60%;
-  float: left;
-  padding: 1.2rem;
-}
+
+
 
 

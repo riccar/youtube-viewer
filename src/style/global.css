@@ -10,13 +10,20 @@ Above analysis is loosing relevance since browsers are hiding the font size sett
 */
 
 $shadowColour: #7f4e26;
+
 html {
+  /*changing html font size to 10px to ease the match around rem calculation*/
   font-size: 10px;
 }
 
 body {
   font-family: 'Cabin', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.1rem;
+
+  @mixin atMedium {
+    font-size: 1.4rem;
+  }
+  
 }
 
 .group:before, .group:after {

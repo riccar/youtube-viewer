@@ -1,19 +1,31 @@
 .search-bar {
-  margin: 2rem;
+  margin: 1rem;
+
+  & input {
+    width: 28rem;
+    font-family: 'Cabin', sans-serif;
+    border: 1px solid #CDCDCD;
+    outline: none;
+    padding: 0 1rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+
+    @mixin atMedium {
+      width: 45rem;
+    }
+
+    @mixin atLarge{
+      width: 85rem;
+    }
+  }
+
+  & input:focus {
+    border: 1px solid #869960;
+    /*Create inside shadow for the text field in focus. 2px horizontal and vertical offset and 2px blur*/
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
+  }
 }
 
-.search-bar input {
-  width: 100%;
-  font-family: 'Cabin', sans-serif;
-  border: 1px solid #CDCDCD;
-  outline: none;
-  padding: 0 1rem;
-  height: 3rem;
-  border-radius: 0.4rem;
-}
 
-input:focus {
-  border: 1px solid #869960;
-  /*Create inside shadow for the text field in focus. 2px horizontal and vertical offset and 2px blur*/
-  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
-}
+
+

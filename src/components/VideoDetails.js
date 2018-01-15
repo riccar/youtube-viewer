@@ -13,10 +13,10 @@ const VideoDetail = ({video}) => {
 
   return (
     <div className="video-detail">
-      <div className="video-details__viewer">
-        <iframe src={url} className="video-details__video"></iframe>
+      <div className="video-detail__viewer">
+        <iframe src={url} className="video-detail__video"></iframe>
       </div>
-      <div className="video-details__desc">
+      <div className="video-detail__desc">
         <div>{video.snippet.title}</div>
         <div>{video.snippet.description}</div>
       </div>
