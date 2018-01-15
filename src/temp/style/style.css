@@ -450,6 +450,10 @@ template {
   display: none;
 }
 
+/*For screen size of 768px or biggerr*/
+
+/*For screen size of 1200px*/
+
 /*
 
 Use rem for sizeing and gapping since it scales to user's browser (html) font size which is 16px by default
@@ -462,13 +466,23 @@ Above analysis is loosing relevance since browsers are hiding the font size sett
 */
 
 html {
+  /*changing html font size to 10px to ease the match around rem calculation*/
   font-size: 10px;
 }
 
 body {
   font-family: 'Cabin', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.1rem;
+  
 }
+
+@media (min-width: 768px) {
+
+body {
+    font-size: 1.4rem
+  
+}
+  }
 
 .group:before, .group:after {
   content: "";
@@ -488,82 +502,171 @@ body {
 }
 
 .video-viewer {
-  max-width: 99rem;
-  margin: 2.5rem auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background:#ccc;
-  height: 72rem;
+  max-width: 30rem;
+  margin: 1.5rem auto;
+
+  height: 88rem;
+
+
+
+  
 }
 
+@media (min-width: 768px) {
+
+.video-viewer {
+    max-width: 77rem;
+    margin: 2rem auto;
+    height: 62rem;
+    background:#ccc;
+    border: 1px solid #ddd;
+    border-radius: 4px
+
+
+
+  
+}
+  }
+
+@media (min-width: 1280px) {
+
+.video-viewer {
+    max-width: 120rem;
+    height: 62rem;
+    background:#ccc
+
+
+
+  
+}
+  }
+
 .search-bar {
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .search-bar input {
-  width: 100%;
-  font-family: 'Cabin', sans-serif;
-  border: 1px solid #CDCDCD;
-  outline: none;
-  padding: 0 1rem;
-  height: 3rem;
-  border-radius: 0.4rem;
-}
+    width: 28rem;
+    font-family: 'Cabin', sans-serif;
+    border: 1px solid #CDCDCD;
+    outline: none;
+    padding: 0 1rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+  }
 
-input:focus {
-  border: 1px solid #869960;
-  /*Create inside shadow for the text field in focus. 2px horizontal and vertical offset and 2px blur*/
-  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
-          box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
-}
+@media (min-width: 768px) {
+
+.search-bar input {
+      width: 45rem
+  }
+  }
+
+@media (min-width: 1280px) {
+
+.search-bar input {
+      width: 85rem
+  }
+  }
+
+.search-bar input:focus {
+    border: 1px solid #869960;
+    /*Create inside shadow for the text field in focus. 2px horizontal and vertical offset and 2px blur*/
+    -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
+            box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
+  }
 
 .video-detail {
-  margin: 2rem;
-  height: 50rem;
-  width: 55%;
-  float: left;
+  margin: 1rem;
+  
+  
 }
 
-.video-details__viewer {
-  height: 70%;
-  -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
-          box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
-}
+@media (min-width: 768px) {
 
-.video-details__desc {
-  margin-top: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.5rem;
-  background-color: white;
-  -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
-          box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
+.video-detail {
+    margin: 1rem;
+    width: 45rem;
+    float: left
+  
+  
 }
+  }
 
-.video-details__video {
-  width: 100%;
-  height: 100%;
-  border: none;
+@media (min-width: 1280px) {
+
+.video-detail {
+    width: 85rem
+  
+  
 }
+  }
+
+.video-detail__viewer {
+    -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+            box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+  }
+
+@media (min-width: 768px) {
+
+.video-detail__viewer {
+      height: 35rem
+  }
+  }
+
+.video-detail__video {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+.video-detail__desc {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    height: 12rem;
+    background-color: white;
+    -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+            box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
+  }
 
 .video-list {
-  margin: 2rem;
-  height: 30rem;
-  width: 35%;
+  margin: 1rem;
   float: left;
 
 }
 
-.video-list ul {
-  margin: 0;
-  padding: 0;
-  
+@media (min-width: 768px) {
+
+.video-list {
+    margin: 1rem;
+    width: 27.5rem;
+    position: relative;
+    top: -5rem
+
 }
+  }
+
+@media (min-width: 1280px) {
+
+.video-list {
+    margin: 1rem;
+    width: 27.5rem;
+    position: relative;
+    top: -5rem
+
+}
+  }
+
+.video-list ul {
+    margin: 0;
+    padding: 0;
+  }
 
 .video-list li {
-  list-style: none;
-  
-}
+    list-style: none;
+  }
 
 .video-list-item {
   border: 1px solid #ddd;
@@ -573,21 +676,50 @@ input:focus {
   background-color: white;
   -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
           box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
+  width: 28rem;
 }
+
+@media (min-width: 768px) {
+
+.video-list-item {
+    width: 27rem
+}
+  }
+
+@media (min-width: 1280px) {
+
+.video-list-item {
+    width: 31rem
+}
+  }
 
 .video-list-item:hover {
-  background-color: #eee;
-}
+    background-color: #eee;
+  }
 
-//todo: Change width in percentage for px or rem
 .video-list-item__image {
-  width: 40%;
-  float: left;
-  padding: 1rem;
-}
+    float: left;
+    padding: 0.5rem;
+  }
+
+@media (min-width: 768px) {
+
+.video-list-item__image {
+      width: 13rem;
+      padding: 1rem;
+      margin-right: 5px
+  }
+  }
 
 .video-list-item__title {
-  width: 60%;
-  float: left;
-  padding: 1.2rem;
-}
+    padding: 0.5rem;
+  }
+
+@media (min-width: 768px) {
+
+.video-list-item__title {
+      
+      padding: 1rem
+  }
+  }
+
