@@ -1,0 +1,36 @@
+/*
+
+Use rem for sizeing and gapping since it scales to user's browser (html) font size which is 16px by default
+Since 1 rem = 16 px, then 30px = 30/16 = 1.875rem
+Another approach is to set html font-size to 10px to ease the conversion. So 30px = 30/10= 3rem
+
+Use em for media queries sizes since elements inside the containers will escale in reference to the em value
+
+Above analysis is loosing relevance since browsers are hiding the font size setting to favour the zoom setting which change the CSS reference pixel and the whole page will be zoomed including pixel length, “em”, “rem” and everything else too.
+*/
+
+$shadowColour: #7f4e26;
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.6rem;
+}
+
+.group:before, .group:after {
+  content: "";
+  display: table;
+  
+}
+
+.group:after {
+  clear: both;
+}
+
+* {
+	/*Add box-sizing:border-box to force the browser to take into account
+	the padding when calculating the total area size of an object*/
+	box-sizing: border-box;
+}

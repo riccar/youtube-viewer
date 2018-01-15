@@ -1,0 +1,8 @@
+.video-viewer {
+  max-width: 99rem;
+  margin: 2.5rem auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background:#ccc;
+  height: 72rem;
+}

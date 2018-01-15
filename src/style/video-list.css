@@ -1,0 +1,19 @@
+.video-list {
+  margin: 2rem;
+  height: 30rem;
+  width: 35%;
+  float: left;
+
+}
+
+.video-list ul {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.video-list li {
+  list-style: none;
+  
+}
+

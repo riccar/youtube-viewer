@@ -77,7 +77,8 @@ figure {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -113,7 +114,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -320,7 +322,8 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
@@ -353,7 +356,8 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -446,30 +450,144 @@ template {
   display: none;
 }
 
+/*
+
+Use rem for sizeing and gapping since it scales to user's browser (html) font size which is 16px by default
+Since 1 rem = 16 px, then 30px = 30/16 = 1.875rem
+Another approach is to set html font-size to 10px to ease the conversion. So 30px = 30/10= 3rem
+
+Use em for media queries sizes since elements inside the containers will escale in reference to the em value
+
+Above analysis is loosing relevance since browsers are hiding the font size setting to favour the zoom setting which change the CSS reference pixel and the whole page will be zoomed including pixel length, “em”, “rem” and everything else too.
+*/
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.6rem;
+}
+
+.group:before, .group:after {
+  content: "";
+  display: table;
+  
+}
+
+.group:after {
+  clear: both;
+}
+
+* {
+	/*Add box-sizing:border-box to force the browser to take into account
+	the padding when calculating the total area size of an object*/
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.video-viewer {
+  max-width: 99rem;
+  margin: 2.5rem auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background:#ccc;
+  height: 72rem;
+}
+
 .search-bar {
-  margin: 20px;
-  text-align: center;
+  margin: 2rem;
 }
 
 .search-bar input {
-  width: 75%;
+  width: 100%;
+  font-family: 'Cabin', sans-serif;
+  border: 1px solid #CDCDCD;
+  outline: none;
+  padding: 0 1rem;
+  height: 3rem;
+  border-radius: 0.4rem;
 }
 
-.video-detail .details {
-  margin-top: 10px;
-  padding: 10px;
+input:focus {
+  border: 1px solid #869960;
+  /*Create inside shadow for the text field in focus. 2px horizontal and vertical offset and 2px blur*/
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
+          box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .10);
+}
+
+.video-detail {
+  margin: 2rem;
+  height: 50rem;
+  width: 55%;
+  float: left;
+}
+
+.video-details__viewer {
+  height: 70%;
+  -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+          box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
+}
+
+.video-details__desc {
+  margin-top: 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
+  padding: 0.5rem;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+          box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
 }
 
-.video-item img {
-  max-width: 640px;
+.video-details__video {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.list-group-item {
+.video-list {
+  margin: 2rem;
+  height: 30rem;
+  width: 35%;
+  float: left;
+
+}
+
+.video-list ul {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.video-list li {
+  list-style: none;
+  
+}
+
+.video-list-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+          box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
 }
 
-.list-group-item:hover {
+.video-list-item:hover {
   background-color: #eee;
+}
+
+//todo: Change width in percentage for px or rem
+.video-list-item__image {
+  width: 40%;
+  float: left;
+  padding: 1rem;
+}
+
+.video-list-item__title {
+  width: 60%;
+  float: left;
+  padding: 1.2rem;
 }

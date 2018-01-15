@@ -11,11 +11,11 @@ import VideoDetail from './VideoDetails';
 const API_KEY = 'AIzaSyAE1JpbAKurn0ZPMbD-d-TcXxoFP-Sjl3Y';
 
 
-//Create a new component (a class) to produce some html 
+//Create a new component (a class)
 //The parenthesis and the fat arrow is the new ES6 syntax for function() keyword.
 //This component was refactored to be converted into a class component, hence next line was commented
 //const App = () => {
-class App extends Component {
+class VideoViewer extends Component {
 
   //When the page first load, search for a default term in the constructor so the page is loaded with
   //videos
@@ -57,7 +57,7 @@ class App extends Component {
     //VideoList component receives the list of videos via  a jsx property tag. This is called passing props
     //In addition, VideoList call defines a callback function passed as a property (props) Sso when it's called back from VideoList it will update App state with the newly selected video
     return (
-      <div>
+      <div className="video-viewer group">
         <SearchBar OnSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
@@ -72,4 +72,4 @@ class App extends Component {
 //Put the component's generated html into the web page DOM 
 //React render the instance of the component App (<App / >).
 //To create instances of components, just wrap them between JSX tags for the transpiler to translate itf into javascript React.createElement("app",null)
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<VideoViewer />, document.querySelector('.container'));

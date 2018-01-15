@@ -1,0 +1,26 @@
+.video-list-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
+}
+
+.video-list-item:hover {
+  background-color: #eee;
+}
+//todo: Change width in percentage for px or rem
+.video-list-item__image {
+  width: 40%;
+  float: left;
+  padding: 1rem;
+}
+
+.video-list-item__title {
+  width: 60%;
+  float: left;
+  padding: 1.2rem;
+}
+
+

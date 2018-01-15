@@ -2,9 +2,12 @@ const gulp = require('gulp');
 
 //require postcss as a CSS preprocessor
 const postcss = require('gulp-postcss');
-
-//require or import to be able to import css files within other css files
+const autoprefixer = require('autoprefixer');
+const cssvars = require('postcss-simple-vars');
+const nested = require('postcss-nested');
 const cssImport = require('postcss-import');
+const mixins = require('postcss-mixins');
+const hexrgba = require('postcss-hexrgba');
 
 
 //style task called from the watch task to pipe PostCSS features
@@ -15,7 +18,7 @@ gulp.task('styles', function() {
   return gulp.src('./src/style/style.css')
 
   //pipe the postcss features or filters to be applied to the source file
-  .pipe(postcss([cssImport]))
+  .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
 
   //on error function to catch errors and prevent gulp from stop running
   .on('error', function (errorInfo) {

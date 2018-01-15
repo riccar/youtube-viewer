@@ -23,10 +23,11 @@ class SearchBar extends Component {
       <div className="search-bar">
         <input 
           value={this.state.term}
+          placeholder="Search"
           //the following error function simplifies the code by declaring the function as <param> => <function body>
           //event.target.value has the input value
           onChange={event => this.onInputChange(event.target.value)} />
-          <p>Input Value: {this.state.term}</p>
+          
       </div>
     );
   }
