@@ -94,21 +94,21 @@
 
 	var API_KEY = 'AIzaSyAE1JpbAKurn0ZPMbD-d-TcXxoFP-Sjl3Y';
 
-	//Create a new component (a class) to produce some html 
+	//Create a new component (a class)
 	//The parenthesis and the fat arrow is the new ES6 syntax for function() keyword.
 	//This component was refactored to be converted into a class component, hence next line was commented
 	//const App = () => {
 
-	var App = function (_Component) {
-	  _inherits(App, _Component);
+	var VideoViewer = function (_Component) {
+	  _inherits(VideoViewer, _Component);
 
 	  //When the page first load, search for a default term in the constructor so the page is loaded with
 	  //videos
-	  function App(props) {
-	    _classCallCheck(this, App);
+	  function VideoViewer(props) {
+	    _classCallCheck(this, VideoViewer);
 
 	    //Initialize component state as an empty array
-	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (VideoViewer.__proto__ || Object.getPrototypeOf(VideoViewer)).call(this, props));
 
 	    _this.state = {
 	      videos: [],
@@ -120,7 +120,7 @@
 	    return _this;
 	  }
 
-	  _createClass(App, [{
+	  _createClass(VideoViewer, [{
 	    key: 'videoSearch',
 	    value: function videoSearch(term) {
 	      var _this2 = this;
@@ -156,7 +156,7 @@
 	      //In addition, VideoList call defines a callback function passed as a property (props) Sso when it's called back from VideoList it will update App state with the newly selected video
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'video-viewer group' },
 	        _react2.default.createElement(_SearchBar2.default, { OnSearchTermChange: videoSearch }),
 	        _react2.default.createElement(_VideoDetails2.default, { video: this.state.selectedVideo }),
 	        _react2.default.createElement(_VideoList2.default, {
@@ -168,14 +168,14 @@
 	    }
 	  }]);
 
-	  return App;
+	  return VideoViewer;
 	}(_react.Component);
 	//Put the component's generated html into the web page DOM 
 	//React render the instance of the component App (<App / >).
 	//To create instances of components, just wrap them between JSX tags for the transpiler to translate itf into javascript React.createElement("app",null)
 
 
-	_reactDom2.default.render(_react2.default.createElement(App, null), document.querySelector('.container'));
+	_reactDom2.default.render(_react2.default.createElement(VideoViewer, null), document.querySelector('.container'));
 
 /***/ }),
 /* 2 */
@@ -33249,18 +33249,13 @@
 	        'div',
 	        { className: 'search-bar' },
 	        _react2.default.createElement('input', {
-	          value: this.state.term
+	          value: this.state.term,
+	          placeholder: 'Search'
 	          //the following error function simplifies the code by declaring the function as <param> => <function body>
 	          //event.target.value has the input value
 	          , onChange: function onChange(event) {
 	            return _this2.onInputChange(event.target.value);
-	          } }),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Input Value: ',
-	          this.state.term
-	        )
+	          } })
 	      );
 	    }
 
@@ -33320,9 +33315,13 @@
 	  });
 
 	  return _react2.default.createElement(
-	    'ul',
-	    { className: 'col-md-4 list-group' },
-	    videoItems
+	    'div',
+	    { className: 'video-list group' },
+	    _react2.default.createElement(
+	      'ul',
+	      null,
+	      videoItems
+	    )
 	  );
 	};
 
@@ -33357,23 +33356,19 @@
 	    "li",
 	    { onClick: function onClick() {
 	        return onVideoSelect(video);
-	      }, className: "list-group-item" },
+	      } },
 	    _react2.default.createElement(
 	      "div",
-	      { className: "video-list media" },
+	      { className: "video-list-item group" },
 	      _react2.default.createElement(
 	        "div",
-	        { className: "media-left" },
-	        _react2.default.createElement("img", { className: "media-object", src: imageUrl })
+	        { className: "video-list-item__image" },
+	        _react2.default.createElement("img", { src: imageUrl })
 	      ),
 	      _react2.default.createElement(
 	        "div",
-	        { className: "media-body" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "media-heading" },
-	          video.snippet.title
-	        )
+	        { className: "video-list-item__title" },
+	        video.snippet.title
 	      )
 	    )
 	  );
@@ -33416,15 +33411,15 @@
 
 	  return _react2.default.createElement(
 	    "div",
-	    { className: "video-detail col-md-8" },
+	    { className: "video-detail" },
 	    _react2.default.createElement(
 	      "div",
-	      { className: "embed-responsive embed-responsive-16by9" },
-	      _react2.default.createElement("iframe", { src: url, className: "embed-responsive-item" })
+	      { className: "video-detail__viewer" },
+	      _react2.default.createElement("iframe", { src: url, className: "video-detail__video" })
 	    ),
 	    _react2.default.createElement(
 	      "div",
-	      { className: "details" },
+	      { className: "video-detail__desc" },
 	      _react2.default.createElement(
 	        "div",
 	        null,
