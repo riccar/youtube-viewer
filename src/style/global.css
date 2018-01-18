@@ -9,7 +9,7 @@ Use em for media queries sizes since elements inside the containers will escale 
 Above analysis is loosing relevance since browsers are hiding the font size setting to favour the zoom setting which change the CSS reference pixel and the whole page will be zoomed including pixel length, “em”, “rem” and everything else too.
 */
 
-$shadowColour: #7f4e26;
+$shadowColour: #000;
 
 html {
   /*changing html font size to 10px to ease the match around rem calculation*/
@@ -19,7 +19,8 @@ html {
 body {
   font-family: 'Cabin', sans-serif;
   font-size: 1.1rem;
-
+ 
+  background-image: url("../../images/red-seamless-canvas-texture.jpg");
   @mixin atMedium {
     font-size: 1.4rem;
   }

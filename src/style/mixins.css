@@ -1,5 +1,11 @@
 
-/*For screen size of 768px or biggerr*/
+@define-mixin atSmallRotated {
+  @media (min-width: 568px) {
+    @mixin-content;
+  }
+}
+
+/*For screen size of 768px or bigger*/
 @define-mixin atMedium {
   @media (min-width: 768px) {
     @mixin-content;

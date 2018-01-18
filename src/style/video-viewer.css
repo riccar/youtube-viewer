@@ -1,22 +1,23 @@
 .video-viewer {
   max-width: 30rem;
   margin: 1.5rem auto;
-
   height: 88rem;
+
+  @mixin atSmallRotated {
+    max-width: 56.8rem;
+    
+   }
 
   @mixin atMedium {
     max-width: 77rem;
     margin: 2rem auto;
     height: 62rem;
-    background:#ccc;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
   }
 
   @mixin atLarge {
     max-width: 120rem;
     height: 62rem;
-    background:#ccc;
  
   }
 

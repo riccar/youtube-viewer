@@ -1,4 +1,5 @@
 const gulp = require('gulp'),
+imagemin = require('gulp-imagemin'),
 del = require('del'),
 usemin = require('gulp-usemin'),
 rev = require('gulp-rev'),
@@ -22,6 +23,20 @@ gulp.task('deleteDistFolder', function() {
   return del(['./docs']);
 });
 
+//Optimize and copy all the image files to the docs folder but wait until the deleteDistFolder task finishes
+gulp.task('optimizeImages', ['deleteDistFolder'], function() {
+  return gulp.src(['./src/images/**/*'])
+    .pipe(imagemin({
+      //Optimize jpeg
+      progressive: true,
+      //Optimize gif
+      interlaced: true,
+      //Optimize svg
+      multipass: true
+    }))
+    .pipe(gulp.dest("./docs/images"));
+});
+
 
 //Trigger the usemin function after the deleteDistFolder finishes
 gulp.task('useminTrigger', ['deleteDistFolder'], function() {
@@ -43,4 +58,4 @@ gulp.task('usemin', ['styles', 'scripts'], function() {
 
 
 //build task to execute multiple build related task in the correct order
-gulp.task('build', ['deleteDistFolder', 'useminTrigger']);
+gulp.task('build', ['deleteDistFolder', 'optimizeImages', 'useminTrigger']);

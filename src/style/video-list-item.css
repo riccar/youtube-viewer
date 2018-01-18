@@ -3,12 +3,20 @@
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 0.5rem;
-  background-color: white;
+  background-color: rgba(#fff, .6);
   box-shadow: 0 1px 4px rgba($shadowColour, 0.7), 0 0 40px rgba($shadowColour, 0.1) inset; 
   width: 28rem;
 
+  @mixin atSmallRotated {
+    width: 26.8rem;
+    display: inline-flex;
+    margin-bottom: 0.22rem;
+  }
+
   @mixin atMedium {
     width: 27rem;
+    display: block;
+    margin-bottom: 1rem;
   }
 
   @mixin atLarge {
@@ -26,8 +34,7 @@
     @mixin atMedium {
       width: 13rem;
       padding: 1rem;
-      margin-right: 5px;
-      
+      margin-right: 5px;      
     }
   }
   
@@ -35,9 +42,7 @@
     padding: 0.5rem;
     
     @mixin atMedium {
-      
       padding: 1rem;
-      
     }
   }
 }

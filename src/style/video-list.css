@@ -2,6 +2,11 @@
   margin: 1rem;
   float: left;
 
+  @mixin atSmallRotated {
+    max-width: 56.8rem;
+    
+  }
+
   @mixin atMedium {
     margin: 1rem;
     width: 27.5rem;
@@ -23,6 +28,26 @@
   
   & li {
     list-style: none;
+
+    @mixin atSmallRotated {
+      display: inline-block;
+    }
+
+
+  }
+
+  /*Apply margin only to the secont and fourth li element. 
+  Second element is to the right of the firt one not to the bottom*/
+  @mixin atSmallRotated {
+    & ul > li:nth-child(2),:nth-child(4) {
+      margin-left: 1rem;
+    }    
+  }
+
+  @mixin atMedium {
+    & ul > li:nth-child(2),:nth-child(4) {
+      margin-left: 0;
+    }    
   }
 
 }

@@ -127,7 +127,7 @@
 
 	      //Define the Youtube search as function by passing the apy key and the search term and defining the callback function
 	      //with the returned videos
-	      (0, _youtubeApiSearch2.default)({ key: API_KEY, term: term }, function (videos) {
+	      (0, _youtubeApiSearch2.default)({ key: API_KEY, term: term, maxResults: 8 }, function (videos) {
 	        //in ES6 when the key and the value of an object are the same, they can be condensed into one. Eg. { videos: videos }
 	        //can be written as {videos}
 	        //Set the state with the search results

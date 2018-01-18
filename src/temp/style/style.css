@@ -450,7 +450,7 @@ template {
   display: none;
 }
 
-/*For screen size of 768px or biggerr*/
+/*For screen size of 768px or bigger*/
 
 /*For screen size of 1200px*/
 
@@ -473,6 +473,8 @@ html {
 body {
   font-family: 'Cabin', sans-serif;
   font-size: 1.1rem;
+ 
+  background-image: url("../../images/red-seamless-canvas-texture.jpg");
   
 }
 
@@ -504,7 +506,6 @@ body {
 .video-viewer {
   max-width: 30rem;
   margin: 1.5rem auto;
-
   height: 88rem;
 
 
@@ -512,15 +513,23 @@ body {
   
 }
 
+@media (min-width: 568px) {
+
+.video-viewer {
+    max-width: 56.8rem
+
+
+
+  
+}
+  }
+
 @media (min-width: 768px) {
 
 .video-viewer {
     max-width: 77rem;
     margin: 2rem auto;
-    height: 62rem;
-    background:#ccc;
-    border: 1px solid #ddd;
-    border-radius: 4px
+    height: 62rem
 
 
 
@@ -532,8 +541,7 @@ body {
 
 .video-viewer {
     max-width: 120rem;
-    height: 62rem;
-    background:#ccc
+    height: 62rem
 
 
 
@@ -543,30 +551,42 @@ body {
 
 .search-bar {
   margin: 1rem;
+  width: 28rem;
 }
 
+@media (min-width: 568px) {
+
+.search-bar {
+    width: 54.8rem
+}
+  }
+
+@media (min-width: 768px) {
+
+.search-bar {
+    width: 45rem
+}
+  }
+
+@media (min-width: 1280px) {
+
+.search-bar {
+    width: 85rem
+}
+  }
+
 .search-bar input {
-    width: 28rem;
+    width: 100%;
     font-family: 'Cabin', sans-serif;
     border: 1px solid #CDCDCD;
     outline: none;
     padding: 0 1rem;
     height: 3rem;
     border-radius: 0.4rem;
-  }
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset;
+            box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset; 
 
-@media (min-width: 768px) {
-
-.search-bar input {
-      width: 45rem
-  }
-  }
-
-@media (min-width: 1280px) {
-
-.search-bar input {
-      width: 85rem
-  }
+    
   }
 
 .search-bar input:focus {
@@ -603,8 +623,15 @@ body {
   }
 
 .video-detail__viewer {
-    -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
-            box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset;
+            box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset;
+  }
+
+@media (min-width: 568px) {
+
+.video-detail__viewer {
+      height: 24rem
+  }
   }
 
 @media (min-width: 768px) {
@@ -626,9 +653,9 @@ body {
     border-radius: 4px;
     padding: 0.5rem;
     height: 12rem;
-    background-color: white;
-    -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
-            box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
+    background-color: rgba(255,255,255, .6);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset;
+            box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset; 
   }
 
 .video-list {
@@ -636,6 +663,14 @@ body {
   float: left;
 
 }
+
+@media (min-width: 568px) {
+
+.video-list {
+    max-width: 56.8rem
+
+}
+  }
 
 @media (min-width: 768px) {
 
@@ -666,6 +701,32 @@ body {
 
 .video-list li {
     list-style: none;
+
+
+  }
+
+@media (min-width: 568px) {
+
+.video-list li {
+      display: inline-block
+
+
+  }
+  }
+
+/*Apply margin only to the secont and fourth li element. 
+  Second element is to the right of the firt one not to the bottom*/
+
+@media (min-width: 568px) {
+    .video-list ul > li:nth-child(2),.video-list :nth-child(4) {
+      margin-left: 1rem;
+    }
+  }
+
+@media (min-width: 768px) {
+    .video-list ul > li:nth-child(2),.video-list :nth-child(4) {
+      margin-left: 0;
+    }
   }
 
 .video-list-item {
@@ -673,16 +734,29 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 0.5rem;
-  background-color: white;
-  -webkit-box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset;
-          box-shadow: 0 1px 4px rgba(127,78,38, 0.7), 0 0 40px rgba(127,78,38, 0.1) inset; 
+  background-color: rgba(255,255,255, .6);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset;
+          box-shadow: 0 1px 4px rgba(0,0,0, 0.7), 0 0 40px rgba(0,0,0, 0.1) inset; 
   width: 28rem;
 }
+
+@media (min-width: 568px) {
+
+.video-list-item {
+    width: 26.8rem;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-bottom: 0.22rem
+}
+  }
 
 @media (min-width: 768px) {
 
 .video-list-item {
-    width: 27rem
+    width: 27rem;
+    display: block;
+    margin-bottom: 1rem
 }
   }
 
@@ -718,7 +792,6 @@ body {
 @media (min-width: 768px) {
 
 .video-list-item__title {
-      
       padding: 1rem
   }
   }
