@@ -10,6 +10,11 @@ Above analysis is loosing relevance since browsers are hiding the font size sett
 */
 
 $shadowColour: #000;
+$bgColour: #76d6fe;
+$videoItems: #b4c7b4;
+$fontColour: #6d2d0a;
+$border: #6d2d0a;
+$description: #f8bf0a;
 
 html {
   /*changing html font size to 10px to ease the match around rem calculation*/
@@ -19,8 +24,7 @@ html {
 body {
   font-family: 'Cabin', sans-serif;
   font-size: 1.1rem;
- 
-  background-image: url("../../images/red-seamless-canvas-texture.jpg");
+  background-color: $bgColour;
   @mixin atMedium {
     font-size: 1.4rem;
   }
