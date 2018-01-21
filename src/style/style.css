@@ -1,6 +1,8 @@
 @import "normalize.css";
 @import "./mixins";
+@import "./fonts";
 @import "./global";
+@import "./header";
 @import "./video-viewer";
 @import "./search-bar";
 @import "./video-detail";

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'indubita';
+  src: url('fonts/INDUBITA.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('fonts/PT-Sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

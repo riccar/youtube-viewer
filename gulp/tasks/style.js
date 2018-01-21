@@ -30,3 +30,11 @@ gulp.task('styles', function() {
   .pipe(gulp.dest('./src/temp/style'));
     
 });
+
+gulp.task('fonts', function() {
+  
+    console.log("Moving fonts to build folder");
+    return gulp.src('./src/style/fonts/**/*')
+    .pipe(gulp.dest('./src/temp/style/fonts'));
+  
+});

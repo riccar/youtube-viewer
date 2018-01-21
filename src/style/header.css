@@ -1,0 +1,39 @@
+.header {
+  
+  /*background: -webkit-linear-gradient($fontColour, $description);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+ 
+  font-family: 'Shrikhand', cursive;
+  position: relative;   
+  color: $headerTextBottom;
+  font-size: 2.3rem;
+  margin: 0 1.5rem;
+
+  @mixin atMedium {
+    font-size: 4.3rem;
+  }
+
+
+  &:before {
+    content: "YouTube Video Player";
+    height: 56%;
+    position: absolute;
+    color: $headerTextMid;
+    overflow: hidden;   
+  }
+
+  &:after {
+    content: "YouTube Video Player";
+    height: 44%;
+    /*Completing the backgorund color for some letters like 'r'*/
+    width: 100%;
+    position: absolute;
+    color: $headerTextTop;
+    overflow: hidden;  
+    left: 0; 
+  }
+}
+
+
+

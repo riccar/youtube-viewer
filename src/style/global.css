@@ -15,6 +15,12 @@ $videoItems: #b4c7b4;
 $fontColour: #6d2d0a;
 $border: #6d2d0a;
 $description: #f8bf0a;
+$headerTextTop: #f8bf0a;
+$headerTextMid: #e24e34;
+$headerTextBottom: #6d2d0a;
+
+
+
 
 html {
   /*changing html font size to 10px to ease the match around rem calculation*/
@@ -22,7 +28,7 @@ html {
 }
 
 body {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'PTSans', Tahoma, sans-serif;
   font-size: 1.1rem;
   background-color: $bgColour;
   @mixin atMedium {
@@ -30,6 +36,8 @@ body {
   }
   
 }
+
+
 
 .group:before, .group:after {
   content: "";

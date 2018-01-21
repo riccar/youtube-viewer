@@ -24,16 +24,19 @@ gulp.task('watch', function() {
    
   });
 
+  
   /*Watch for any change to the script files*/
   watch('./src/components/**/*.js', function() {
     gulp.start('scriptsRefresh');
   });
+
+  
   
 });
 
 //Inject css changes into the browser without refreshing 
 //but first run the styles task and wait until it finishes.
-gulp.task('cssInject', ['styles'], function () {
+gulp.task('cssInject', ['styles', 'fonts'], function () {
   
   //Setup the source of the file
   return gulp.src('./src/temp/style/style.css')

@@ -17,7 +17,8 @@
 
     border: 4px solid $border;
     border-radius: 4px;
-
+    height: 15rem;
+    
     @mixin atSmallRotated {
       height: 24rem;
      }

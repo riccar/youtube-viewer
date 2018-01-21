@@ -454,6 +454,20 @@ template {
 
 /*For screen size of 1200px*/
 
+@font-face {
+  font-family: 'indubita';
+  src: url('fonts/INDUBITA.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('fonts/PT-Sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*
 
 Use rem for sizeing and gapping since it scales to user's browser (html) font size which is 16px by default
@@ -471,7 +485,7 @@ html {
 }
 
 body {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'PTSans', Tahoma, sans-serif;
   font-size: 1.1rem;
   background-color: #76d6fe;
   
@@ -501,6 +515,45 @@ body {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 }
+
+.header {
+  
+  /*background: -webkit-linear-gradient($fontColour, $description);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+ 
+  font-family: 'Shrikhand', cursive;
+  position: relative;   
+  color: #6d2d0a;
+  font-size: 2.3rem;
+  margin: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+
+.header {
+    font-size: 4.3rem
+}
+  }
+
+.header:before {
+    content: "YouTube Video Player";
+    height: 56%;
+    position: absolute;
+    color: #e24e34;
+    overflow: hidden;   
+  }
+
+.header:after {
+    content: "YouTube Video Player";
+    height: 44%;
+    /*Completing the backgorund color for some letters like 'r'*/
+    width: 100%;
+    position: absolute;
+    color: #f8bf0a;
+    overflow: hidden;  
+    left: 0; 
+  }
 
 .video-viewer {
   max-width: 30rem;
@@ -629,6 +682,7 @@ body {
 
     border: 4px solid #6d2d0a;
     border-radius: 4px;
+    height: 15rem;
   }
 
 @media (min-width: 568px) {

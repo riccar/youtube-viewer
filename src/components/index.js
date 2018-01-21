@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YouTubeSearch from 'youtube-api-search';
 
+import Header from './Header';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetails';
@@ -58,6 +59,7 @@ class VideoViewer extends Component {
     //In addition, VideoList call defines a callback function passed as a property (props) Sso when it's called back from VideoList it will update App state with the newly selected video
     return (
       <div className="video-viewer group">
+        <Header />
         <SearchBar OnSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList

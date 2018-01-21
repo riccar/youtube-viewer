@@ -71,15 +71,19 @@
 
 	var _youtubeApiSearch2 = _interopRequireDefault(_youtubeApiSearch);
 
-	var _SearchBar = __webpack_require__(176);
+	var _Header = __webpack_require__(176);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _SearchBar = __webpack_require__(177);
 
 	var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
-	var _VideoList = __webpack_require__(177);
+	var _VideoList = __webpack_require__(178);
 
 	var _VideoList2 = _interopRequireDefault(_VideoList);
 
-	var _VideoDetails = __webpack_require__(179);
+	var _VideoDetails = __webpack_require__(180);
 
 	var _VideoDetails2 = _interopRequireDefault(_VideoDetails);
 
@@ -157,6 +161,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'video-viewer group' },
+	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(_SearchBar2.default, { OnSearchTermChange: videoSearch }),
 	        _react2.default.createElement(_VideoDetails2.default, { video: this.state.selectedVideo }),
 	        _react2.default.createElement(_VideoList2.default, {
@@ -33195,6 +33200,35 @@
 /* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//instead of writing (props)  => and then  const video = props.video.
+	//use the ES6 syntax of ({video}) which means the same. 
+	var Header = function Header() {
+
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "header" },
+	    "YouTube Video Player"
+	  );
+	}; //component VideoListItem
+	//Renders one video item within the list of videos
+	exports.default = Header;
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -33278,7 +33312,7 @@
 	exports.default = SearchBar;
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33291,7 +33325,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _VideoListItem = __webpack_require__(178);
+	var _VideoListItem = __webpack_require__(179);
 
 	var _VideoListItem2 = _interopRequireDefault(_VideoListItem);
 
@@ -33328,7 +33362,7 @@
 	exports.default = VideoList;
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -33378,7 +33412,7 @@
 	exports.default = VideoListItem;
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
