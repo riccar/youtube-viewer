@@ -25,5 +25,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
+  },
+  externals: {
+    'Config': JSON.stringify(require('./config.json'))
   }
 };

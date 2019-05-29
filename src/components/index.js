@@ -9,7 +9,8 @@ import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetails';
 
-const API_KEY = 'AIzaSyAE1JpbAKurn0ZPMbD-d-TcXxoFP-Sjl3Y';
+var config = require('Config')
+const YouTubeAPI = config.YouTubeAPI; 
 
 
 //Create a new component (a class)
@@ -36,7 +37,7 @@ class VideoViewer extends Component {
   videoSearch(term) {
     //Define the Youtube search as function by passing the apy key and the search term and defining the callback function
     //with the returned videos
-    YouTubeSearch({key: API_KEY, term: term, maxResults: 8}, (videos) => {
+    YouTubeSearch({key: YouTubeAPI, term: term, maxResults: 8}, (videos) => {
       //in ES6 when the key and the value of an object are the same, they can be condensed into one. Eg. { videos: videos }
       //can be written as {videos}
       //Set the state with the search results

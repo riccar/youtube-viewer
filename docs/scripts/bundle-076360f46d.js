@@ -96,7 +96,8 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //Import react so it can be used inside this module. The transpiler will take care of provide access to it. 
 
 
-	var API_KEY = 'AIzaSyAE1JpbAKurn0ZPMbD-d-TcXxoFP-Sjl3Y';
+	var config = __webpack_require__(181);
+	var YouTubeAPI = config.YouTubeAPI;
 
 	//Create a new component (a class)
 	//The parenthesis and the fat arrow is the new ES6 syntax for function() keyword.
@@ -131,7 +132,7 @@
 
 	      //Define the Youtube search as function by passing the apy key and the search term and defining the callback function
 	      //with the returned videos
-	      (0, _youtubeApiSearch2.default)({ key: API_KEY, term: term, maxResults: 8 }, function (videos) {
+	      (0, _youtubeApiSearch2.default)({ key: YouTubeAPI, term: term, maxResults: 8 }, function (videos) {
 	        //in ES6 when the key and the value of an object are the same, they can be condensed into one. Eg. { videos: videos }
 	        //can be written as {videos}
 	        //Set the state with the search results
@@ -33469,6 +33470,12 @@
 	};
 
 	exports.default = VideoDetail;
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports) {
+
+	module.exports = {"YouTubeAPI":"AIzaSyDFzMUSgsvkhiK-aKs2ppPDF-ACqs3435s"};
 
 /***/ })
 /******/ ]);
