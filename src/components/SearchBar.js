@@ -13,7 +13,7 @@ class SearchBar extends Component {
 
     //Initializing the state by creating a new object and assign it to the state attribute of the class
     //Add the property term to the object as empty, to record the search term that is the value typed into the text box
-    this.state = { term: ''};
+    this.state = { term: 'Clean Energy'};
   }
   
   //Every React class based component must have a render method

@@ -33267,7 +33267,7 @@
 	    //executing parent constructor. 
 
 
-	    _this.state = { term: '' };
+	    _this.state = { term: 'Clean Energy' };
 	    return _this;
 	  }
 
@@ -33475,7 +33475,7 @@
 /* 181 */
 /***/ (function(module, exports) {
 
-	module.exports = {"YouTubeAPI":"AIzaSyDFzMUSgsvkhiK-aKs2ppPDF-ACqs3435s"};
+	module.exports = {"YouTubeAPI":"AIzaSyChDTFb-H-h5f78OrUUkGiwKv7dhCGkOzI"};
 
 /***/ })
 /******/ ]);
