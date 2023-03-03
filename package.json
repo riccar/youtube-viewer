@@ -31,15 +31,15 @@
     "gulp-watch": "^4.3.11",
     "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
-    "mocha": "^2.4.5",
+    "mocha": "^10.2.0",
     "postcss-hexrgba": "^1.0.0",
     "postcss-import": "^11.0.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^3.0.0",
     "postcss-simple-vars": "^4.1.0",
     "react-addons-test-utils": "^0.14.7",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^5.75.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
